@@ -99,7 +99,7 @@ const NewChat = () => {
             </form>
             <motion.button 
               className="nc-send-btn" 
-              onClick={handleSend}
+              type='submit'
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
