@@ -25,7 +25,7 @@ export function useLogin() {
       navigate('/home');
     },
     onError: (err) => {
-      alert('error mutasi login:', err?.message || err);
+      alert(err?.message || 'Login failed. Please try again.');
     },
   });
 }

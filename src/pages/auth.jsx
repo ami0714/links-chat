@@ -27,14 +27,14 @@ const Auth = () => {
   const handleAuth = (data)=>{
     if(!isLogin){
       registerMutate(data,{
-        onSuccess:(data)=>{
-          alert("Register berjaya")
+        onSuccess:()=>{
+          alert("Registration successful")
            reset()
            setIsLogin(true);
            
         },
         onError:(err) => {
-          alert("errpr register" + err?.message);
+          alert("Registration error: " + (err?.message || 'Please try again.'));
         }
       })
     }else{
@@ -82,7 +82,7 @@ const Auth = () => {
                 icon="mdi:email-outline"
                 type="email"
                 placeholder="Enter your email"
-                {...AuthForm("email",{required: "email requared"})}
+                {...AuthForm("email",{required: "Email is required"})}
                 
               />
 
@@ -91,7 +91,7 @@ const Auth = () => {
                 icon="mdi:lock-outline"
                 type="password"
                 placeholder="Enter your password"
-                {...AuthForm("password",{required: "password requared"})}
+                {...AuthForm("password",{required: "Password is required"})}
               />
 
               <Button type="submit">Login</Button>
@@ -133,15 +133,15 @@ const Auth = () => {
                 icon="mdi:email-outline"
                 type="email"
                 placeholder="Enter your email"
-                {...AuthForm("email",{required: "email requared"})}
+                {...AuthForm("email",{required: "Email is required"})}
               />
 
               <InputField
-                label="name"
+                label="Name"
                 icon="mdi:account-outline"
                 type="text"
                 placeholder="Choose a username"
-                {...AuthForm("name",{required: "name required"})}
+                {...AuthForm("name",{required: "Name is required"})}
               />
 
               <InputField
@@ -149,7 +149,7 @@ const Auth = () => {
                 icon="mdi:account-outline"
                 type="text"
                 placeholder="Choose a username"
-                {...AuthForm("username",{required: "username required"})}
+                {...AuthForm("username",{required: "Username is required"})}
               />
 
               <InputField
@@ -157,13 +157,13 @@ const Auth = () => {
                 icon="mdi:lock-outline"
                 type="password"
                 placeholder="Create a password"
-                {...AuthForm("password",{required: "password requared"})}
+                {...AuthForm("password",{required: "Password is required"})}
               />
                <InputField
                 label="Confirm Password"
                 icon="mdi:lock-outline"
                 type="password"
-                {...AuthForm("password_confirmation",{required:"password_confirmation is required"})}
+                {...AuthForm("password_confirmation",{required:"Confirm password is required"})}
                 
               />
 

@@ -37,9 +37,9 @@ const Home = () => {
     const {user,isLoading,error} = useAuth();
     const {data:chat,isLoading:isChatLoad,isError:isChatError,error:chatError} = useChatHome();
     const normalizedSearch = searchTerm.trim().toLocaleLowerCase();
-    //amik username dari data user, kalau takde username, guna uid
-    //includes cek adakah search ade dalam username, kalau takde, return false
-    //dalam filter ialah syarat untuk return true, kalau true, masukkan dalam array baru
+    // Get the username from user data; if it is missing, fall back to the UID.
+    // Check whether the search term exists in the username; if not, return false.
+    // The filter condition must return true to include the item in the new array.
     const filteredChats = Array.isArray(chat)
       ? chat.filter((conversation) =>
           `${conversation?.username || ''} `
@@ -144,19 +144,19 @@ const Home = () => {
       >
         {isChatLoad ? (
           <motion.div className="no-chat-message" variants={itemVariants}>
-            Memuatkan perbualan...
+            Loading conversations...
           </motion.div>
         ) : isChatError ? (
           <motion.div className="no-chat-message" variants={itemVariants}>
-            {chatError?.message || 'Gagal memuatkan perbualan.'}
+            {chatError?.message || 'Failed to load conversations.'}
           </motion.div>
         ) : !Array.isArray(chat) || chat.length === 0 ?(
           <motion.div className="no-chat-message" variants={itemVariants}>
-            Tiada perbualan dijumpai.
+            No conversations found.
           </motion.div>
         ) : filteredChats.length === 0 ? (
           <motion.div className="no-chat-message" variants={itemVariants}>
-            Tiada perbualan sepadan dengan carian.
+            No conversations match your search.
           </motion.div>
         ) : (
          filteredChats.map((conversation,index) => (

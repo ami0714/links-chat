@@ -27,7 +27,6 @@ export default function AuthContextProvider({ children }) {
       const res = await get('/user');
       return res ?? res;
     } catch (error) {
-      console.log('Gagal mendapatkan pengguna:', error);
       localStorage.removeItem('token');
       return null;
     }
@@ -61,7 +60,7 @@ export default function AuthContextProvider({ children }) {
     try {
       await post('/logout');
     } catch (error) {
-      console.error('Logout gagal:', error);
+      // Ignore logout request errors and clear the client session.
     } finally {
       localStorage.removeItem('token');
       queryClient.setQueryData(['user'], null);

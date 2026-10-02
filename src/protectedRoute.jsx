@@ -10,7 +10,7 @@ function ProtectedRoute() {
     return <div >Loading...</div>;
   }
 
-  // Jika tiada user, redirect ke login
+  // If there is no user, redirect to login
   if (!user) {
     return <Navigate to="/" replace />;
   }

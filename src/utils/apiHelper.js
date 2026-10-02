@@ -1,6 +1,6 @@
 const BASE_URL = import.meta.env.VITE_BASE_URL; // Laravel API URL
 
-// Fungsi untuk dapatkan header biasa
+// Function to get common headers
 function getHeaders() {
   const headers = {
     'Content-Type': 'application/json'
@@ -14,12 +14,11 @@ function getHeaders() {
   return headers;
 }
 
-// Fungsi untuk handle response JSON dan ralat
+// Function to handle JSON responses and errors
 async function handleResponse(response) {
   const data = await response.json();
   if (!response.ok) {
-    // Baling ralat dengan mesej dari server
-    const error = new Error(data.message || 'Ralat berlaku');
+    const error = new Error(data.message || 'Something went wrong');
     error.status = response.status;
     error.errors = data.errors || null;
     throw error;

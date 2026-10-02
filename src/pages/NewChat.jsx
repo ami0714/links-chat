@@ -42,7 +42,7 @@ const NewChat = () => {
       createConversation({ uid: uidFromQR, body: { message: data.message } }, {
         
         onError: (err) => {
-          alert('Gagal membuat perbualan baru:', err);
+          alert('Failed to create a new conversation: ' + (err?.message || 'Please try again.'));
         }
       }
     );

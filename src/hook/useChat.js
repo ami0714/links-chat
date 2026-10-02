@@ -35,8 +35,8 @@ export function useChatHandle() {
              queryClient.invalidateQueries({ queryKey: ['chatHome'] });
         },
 
-        onError: (err) => {
-            console.error('Hantar mesej gagal:', err);
+        onError: () => {
+            // Error is surfaced by the UI layer when needed.
         },
     });
 }
@@ -64,8 +64,8 @@ export function useCreateConversation() {
             queryClient.invalidateQueries({ queryKey: ['chatHome'] });
         },
 
-        onError: (err) => {
-            console.error('Sgagal:', err);
+        onError: () => {
+            // Error is surfaced by the UI layer when needed.
         },
     });
 }

@@ -12,7 +12,7 @@ export async function getChatHome(){
          return Array.isArray(response?.dataChat) ? response.dataChat : [];
     }
 
-    throw new Error(response?.message || 'Gagal mendapatkan senarai perbualan');
+    throw new Error(response?.message || 'Failed to get conversation list');
    
   
 }
@@ -26,7 +26,7 @@ export async function getConversationChat(conversationId){
     }
 
     return {
-        message : 'error'
+        message : 'Error'
     }
    
   
@@ -41,18 +41,17 @@ export async function handlerMessage(conversationId,body){
     }
 
     if (response.status === false) {
-        throw new Error(response.message || 'Gagal menghantar mesej');
+        throw new Error(response.message || 'Failed to send message');
     }
 
     return {
-        message:'error send message'
+        message:'Error sending message'
     }
 }
 
 
-//proses nak create new conversation, kalau dah ada conversation id, just hantar message je
-
-//dapatkan data user lain, untuk display nama dan avatar, kalau takde data user lain, just display uid je
+// Process to create a new conversation; if a conversation ID already exists, just send a message.
+// Get the other user data to display the name and avatar; if there is no other user data, just display the UID.
 
 export async function getOtherUserInfo(uid){
     const response = await get(`/user/other?uid=${uid}`);
@@ -61,7 +60,7 @@ export async function getOtherUserInfo(uid){
     }
 
     if(response.status === false){
-        throw new Error(response.message || 'Gagal mendapatkan maklumat pengguna lain');
+        throw new Error(response.message || 'Failed to get other user information');
     }
 
 }
@@ -73,6 +72,6 @@ export async function createNewConversation(uid,body){
         return response
     }
     if(response.status === false){
-        throw new Error(response.message || 'Gagal membuat perbualan baru');
+        throw new Error(response.message || 'Failed to create a new conversation');
     }
 }

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Icon } from '@iconify/react';
 import '../css/EditProfile.css';
 
-// Dummy Data (berdasarkan struktur database users)
+// Dummy data based on the users table structure
 const dummyUser = {
   id: 1,
   name: 'User 2',
@@ -31,8 +31,7 @@ const EditProfile = () => {
   const [avatarName, setAvatarName] = useState(dummyUser.avatar_file);
 
   const handleSave = () => {
-    // Logik untuk save ke backend nanti
-    console.log('Saving changes:', { username, avatarName });
+    // Save logic for the backend later
   };
 
   return (
@@ -40,7 +39,7 @@ const EditProfile = () => {
       {/* Header Section */}
       <div className="ep-header">
         <div className="ep-header-top">
-          {/* Butang Back: Tanpa Bulatan, Hanya Icon */}
+          {/* Back button: no circle, icon only */}
           <button className="ep-back-btn">
             <Icon icon="mdi:chevron-left" />
           </button>
@@ -98,7 +97,7 @@ const EditProfile = () => {
               type="text"
               className="ep-input ep-input-file"
               value={avatarName}
-              readOnly // Dibuat read-only kerana ini hanya paparan nama fail
+              readOnly // Set to read-only because this only displays the file name
             />
             <Icon icon="mdi:pencil-outline" className="ep-file-icon" />
           </div>
@@ -116,7 +115,7 @@ const EditProfile = () => {
         </motion.button>
       </motion.div>
 
-      {/* Placeholder Bottom Nav (Untuk visual sahaja) */}
+      {/* Placeholder bottom nav (visual only) */}
       <div className="ep-bottom-nav-placeholder">
         <Icon icon="mdi:home-outline" className="ep-nav-icon" />
         <Icon icon="mdi:qrcode-scan" className="ep-nav-icon" />

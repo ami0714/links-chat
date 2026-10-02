@@ -25,7 +25,7 @@ const Chat = () => {
     const bottomRef = useRef(null);
 
     // ============================================
-    // Hantar mesej
+    // Send message
     // ============================================
     const handleMessage = (data) => {
         if (!data?.message?.trim() || !conversationId) return;
@@ -35,7 +35,7 @@ const Chat = () => {
     };
 
     // ============================================
-    // Listen real-time (untuk mesej dari user lain)
+    // Listen in real time (for messages from other users)
     // ============================================
     useEffect(() => {
         if (!conversationId) return;
@@ -46,8 +46,6 @@ const Chat = () => {
         const channel = echo.private(`conversation.${conversationId}`);
 
         channel.listen('.message.sent', (e) => {
-            console.log('Mesej baru diterima:', e);
-
             queryClient.invalidateQueries({ queryKey: ['chatHome'] });
 
             // Update cache TanStack Query
@@ -104,14 +102,14 @@ const Chat = () => {
     }, [conversationId, queryClient]);
 
     // ============================================
-    // Auto scroll bila bilangan mesej berubah
+    // Auto scroll when the message count changes
     // ============================================
     useEffect(() => {
         bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
     }, [chatData]);
 
     // ============================================
-    // Data sedia
+    // Data ready
     // ============================================
     const messages = chatData?.chat ?? [];
     const otherUser = chatData?.otherUser;

@@ -24,13 +24,13 @@ export async function getEmail(email){
     const body ={
         email:email
     }
-     
-try {
-    const res = await post('/forgot-password',body)
-    return res.status
-} catch (error) {
-    console.log(error)
-}
+
+    try {
+        const res = await post('/forgot-password',body)
+        return res.status
+    } catch (error) {
+        throw error;
+    }
 }
 
 
@@ -43,10 +43,10 @@ export async function SetNewPass(token,email, password,password_confirmation){
     }
 
     try {
-    const res = await post('/reset-password',body)
-    return res.status
-} catch (error) {
-    console.log(error)
-}
+        const res = await post('/reset-password',body)
+        return res.status
+    } catch (error) {
+        throw error;
+    }
 }
 

@@ -97,7 +97,7 @@ body {
   justify-content: flex-end;
 }
 
-/* Avatar kecil untuk pesan masuk */
+/* Small avatar for incoming messages */
 .avatar-small {
   background-color: #dcd3c6;
   width: 42px;
@@ -106,7 +106,7 @@ body {
   flex-shrink: 0;
 }
 
-/* Bubble Pesan */
+/* Message bubble */
 .bubble {
   padding: 16px 18px;
   border-radius: 12px;
@@ -116,7 +116,7 @@ body {
   word-wrap: break-word;
 }
 
-/* Pesan Masuk (Kiri) */
+/* Incoming message (left) */
 .incoming .bubble {
   background-color: #38374a;
   border-top-left-radius: 20px;
@@ -125,7 +125,7 @@ body {
   border-bottom-left-radius: 0;
 }
 
-/* Pesan Keluar (Kanan) */
+/* Outgoing message (right) */
 .outgoing .bubble {
   background-color: #6b4ce6;
   border-top-left-radius: 20px;

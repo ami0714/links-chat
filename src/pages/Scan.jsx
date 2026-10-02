@@ -10,7 +10,7 @@ const Scan = () => {
   const scannerRef = useRef(null);
   const cameraStartedRef = useRef(false);
   const fileInputRef = useRef(null);
-  const [scanMessage, setScanMessage] = useState('Memulakan kamera...');
+  const [scanMessage, setScanMessage] = useState('Starting camera...');
 
   const scannerConfig = {
     fps: 10,
@@ -26,23 +26,23 @@ const Scan = () => {
         await scannerRef.current.stop();
         scannerRef.current.clear();
       } catch (err) {
-        console.warn('Gagal stop html5qrcode scanner secara normal:', err);
+        // Ignore scanner shutdown errors and continue cleanup.
       } finally {
         cameraStartedRef.current = false;
       }
     }
 
-    // 2. MATIKAN STREAM KAMERA SECARA PISIKAL (Penting untuk matikan lampu kamera)
+    // 2. Turn off the camera stream physically to ensure the camera light is disabled.
     try {
       const videoElement = document.querySelector('#sc-reader video');
       if (videoElement && videoElement.srcObject) {
         const stream = videoElement.srcObject;
         const tracks = stream.getTracks();
-        tracks.forEach((track) => track.stop()); // Matikan perkakasan kamera
+        tracks.forEach((track) => track.stop());
         videoElement.srcObject = null;
       }
     } catch (e) {
-      console.error('Ralat semasa membersihkan media stream track:', e);
+      // Ignore stream cleanup errors.
     }
   };
 
@@ -59,10 +59,10 @@ const Scan = () => {
         () => {}
       );
       cameraStartedRef.current = true;
-      setScanMessage('Halakan kamera kepada kod QR');
+      setScanMessage('Point the camera at the QR code');
     } catch {
       cameraStartedRef.current = false;
-      setScanMessage('Kamera tidak dapat dibuka. Semak izin kamera atau pilih imej.');
+      setScanMessage('The camera could not be opened. Check camera permissions or select an image.');
     }
   };
 
@@ -83,13 +83,13 @@ const Scan = () => {
 
     try {
       await forceStopCamera();
-      setScanMessage('Membaca imej...');
+      setScanMessage('Reading image...');
       const decodedText = await scannerRef.current.scanFile(file, true);
       if(decodedText) {
         navigate(`/chat/new?uid=${encodeURIComponent(decodedText)}`);
       }
     } catch {
-      setScanMessage('Tiada kod QR ditemui dalam imej tersebut.');
+      setScanMessage('No QR code found in the image.');
     } finally {
       event.target.value = '';
       await startCamera();
