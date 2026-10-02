@@ -142,7 +142,7 @@ const Scan = () => {
         onClick={() => fileInputRef.current?.click()}
       >
         <Icon icon="mdi:image-search-outline" />
-        Scan imej dari peranti
+        Scan from Image
       </button>
     </div>
   );
