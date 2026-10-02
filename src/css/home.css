@@ -1,0 +1,174 @@
+/* Home.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,400;8..144,500;8..144,600;8..144,700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f7f7f7;
+  font-family: 'Inter', sans-serif;
+  color: #1a1a1a;
+}
+
+/* Container Utama */
+.home-container {
+  min-height: 100vh;
+  padding-bottom: 80px; /* Ruang untuk Bottom Nav */
+  background-color: #fcfcfc;
+}
+
+/* Header Section */
+.header-section {
+  background-color: #6b4ce6;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding: 25px ; /* Padding bawah lebih besar untuk search bar */
+  color: white;
+  width: 100vw;
+  position: relative;
+  z-index: 1;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.home-header-title {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-family: 'Roboto Serif', serif;
+  font-weight: 700;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.profile-icon-wrapper {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+/* Search Bar */
+.search-container {
+  position: absolute;
+  bottom: -25px;
+  left: 60px;
+  right: 60px;
+  z-index: 2;
+}
+
+.search-input {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+  padding: 16px 16px 16px 48px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #333;
+  outline: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.2s;
+}
+
+.search-input::placeholder {
+  color: #a0a0a0;
+}
+
+.search-input:focus {
+  border-color: #6b4ce6;
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a0a0a0;
+  font-size: 1.2rem;
+}
+
+/* Chat List */
+.chat-list {
+  padding: 45px 60px 20px 60px; /* Padding atas untuk memberi ruang search bar */
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.chat-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.avatar {
+  width: 52px;
+  height: 52px;
+  background-color: #e3d9ce;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  color: #333;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.chat-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #000;
+}
+
+.chat-time {
+  font-size: 0.75rem;
+  color: #999;
+  font-weight: 500;
+}
+
+.chat-message {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.4;
+  display: -webkit-box;
+
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+

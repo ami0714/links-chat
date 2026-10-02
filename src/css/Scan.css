@@ -1,0 +1,168 @@
+/* Scan.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fcfcfc;
+  font-family: 'Roboto Serif', serif;
+  color: #1a1a1a;
+}
+
+/* Container Utama */
+.sc-container {
+  min-height: 100vh;
+  background-color: #fcfcfc;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Section */
+.sc-header {
+  background-color: #6b4ce6;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding: 25px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: white;
+  z-index: 10;
+}
+
+.sc-back-btn {
+  background: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #6b4ce6;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.sc-header-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Scanner Area */
+.sc-scanner-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 40px 20px;
+}
+
+.sc-scan-message {
+  min-height: 24px;
+  margin: -20px 20px 16px;
+  color: #555;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.sc-file-input {
+  display: none;
+}
+
+.sc-file-btn {
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 20px 32px;
+  padding: 13px 20px;
+  border: 0;
+  border-radius: 12px;
+  background: #1a1a1a;
+  color: #ffffff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.sc-file-btn svg {
+  font-size: 1.25rem;
+}
+
+/* Gaya untuk video dari html5-qrcode */
+#sc-reader {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Sembunyikan UI default dari library html5-qrcode */
+#sc-reader__dashboard_section_csr button {
+  display: none !important;
+}
+#sc-reader__dashboard_section_swaplink {
+  display: none !important;
+}
+#sc-reader__status_span {
+  display: none !important;
+}
+#sc-reader video {
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+/* Overlay Kotak Sudut (Corner Brackets) */
+.sc-overlay {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* Supaya boleh klik tembus ke video */
+  z-index: 5;
+}
+
+.sc-corner {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-color: #000000;
+  border-style: solid;
+}
+
+/* Top Left */
+.sc-corner-tl {
+  top: 0;
+  left: 0;
+  border-width: 3px 0 0 3px;
+}
+
+/* Top Right */
+.sc-corner-tr {
+  top: 0;
+  right: 0;
+  border-width: 3px 3px 0 0;
+}
+
+/* Bottom Left */
+.sc-corner-bl {
+  bottom: 0;
+  left: 0;
+  border-width: 0 0 3px 3px;
+}
+
+/* Bottom Right */
+.sc-corner-br {
+  bottom: 0;
+  right: 0;
+  border-width: 0 3px 3px 0;
+}

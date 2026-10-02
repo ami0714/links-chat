@@ -1,0 +1,226 @@
+/* EditProfile.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fcfcfc;
+  font-family: 'Roboto Serif', serif;
+  color: #1a1a1a;
+}
+
+/* Container Utama */
+.ep-container {
+  min-height: 100vh;
+  padding-bottom: 80px; /* Ruang untuk Bottom Nav */
+  background-color: #fcfcfc;
+  display: flex;
+  flex-direction: column;
+  width: 430px;
+}
+
+/* Header Section */
+.ep-header {
+  background-color: #6b4ce6;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding: 25px 20px 30px 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ep-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Butang Back & Edit (Hanya Icon, Tanpa Bulatan) */
+.ep-back-btn, .ep-top-edit-btn {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.2s;
+}
+
+.ep-back-btn:hover, .ep-top-edit-btn:hover {
+  opacity: 0.8;
+}
+
+.ep-header-text {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+
+.ep-header-subtitle {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.5px;
+}
+
+.ep-header-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+/* Kad Profile (Atas) */
+.ep-profile-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 25px 20px 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+}
+
+.ep-avatar {
+  width: 60px;
+  height: 60px;
+  background-color: #6b4ce6;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+}
+
+.ep-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ep-user-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.ep-user-email {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Form Section */
+.ep-form {
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1; /* Supaya button save boleh ke bawah */
+}
+
+.ep-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ep-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #6b4ce6;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ep-input {
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  padding: 16px 18px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: #333;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.ep-input:focus {
+  border-color: #6b4ce6;
+}
+
+/* Input Khas untuk File (dengan ikon dalam) */
+.ep-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.ep-input-file {
+  padding-right: 45px; /* Ruang untuk ikon di kanan */
+  color: #555;
+}
+
+.ep-file-icon {
+  position: absolute;
+  right: 18px;
+  color: #6b4ce6;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Butang Save Changes */
+.ep-save-btn {
+  width: 100%;
+  background-color: #6b4ce6;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 18px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  margin-top: auto; /* Tolak ke bawah */
+  box-shadow: 0 8px 20px rgba(107, 76, 230, 0.3);
+  letter-spacing: 1px;
+}
+
+.ep-save-btn:active {
+  transform: scale(0.98);
+}
+
+/* Placeholder Bottom Nav (Untuk visual sahaja) */
+.ep-bottom-nav-placeholder {
+  height: 70px;
+  background: #ffffff;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.ep-nav-icon {
+  font-size: 26px;
+  color: #b0b0b0;
+}
+
+.ep-nav-icon.active {
+  color: #6b4ce6;
+}

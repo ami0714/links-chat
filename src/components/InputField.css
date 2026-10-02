@@ -1,0 +1,46 @@
+.auth-form-group {
+  margin-bottom: 20px;
+}
+
+.auth-form-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #6b4ce6;
+  margin-bottom: 8px;
+}
+
+.auth-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.auth-input-icon {
+  position: absolute;
+  left: 15px;
+  color: #9e9e9e;
+  font-size: 1.2rem;
+}
+
+.auth-custom-input {
+  width: 100%;
+  padding: 15px 15px 15px 45px;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  background-color: #fafafa;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #1a1a1a;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.auth-custom-input::placeholder {
+  color: #a0a0a0;
+}
+
+.auth-custom-input:focus {
+  border-color: #6b4ce6;
+  box-shadow: 0 0 0 3px rgba(107, 76, 230, 0.1);
+}

@@ -1,0 +1,24 @@
+/* Button */
+.auth-custom-button {
+  width: 100%;
+  background-color: #6b4ce6;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 16px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 8px 20px rgba(107, 76, 230, 0.3);
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.auth-custom-button:hover {
+  background-color: #5a3dd1;
+}
+
+.auth-custom-button:active {
+  transform: scale(0.98);
+}

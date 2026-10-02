@@ -1,0 +1,191 @@
+/* Chat.css */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f7f7f7;
+  font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+}
+
+/* Container Utama */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #fcfcfc;
+  position: relative;
+}
+
+/* Header Section */
+.chatting-header {
+  background-color: #6b4ce6;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding: 25px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: white;
+  z-index: 10;
+}
+
+.chat-back-btn {
+  background: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #6b4ce6;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-avatar {
+  background-color: #dcd3c6;
+  color: #333;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.header-username {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #1a1a1a; /* Warna hitam seperti dalam gambar */
+}
+
+/* Chat Body (Area Pesan) */
+.chat-body {
+  flex: 1;
+  padding: 25px 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  background-color: #fcfcfc;
+}
+
+/* Baris Pesan */
+.message-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  max-width: 85%;
+}
+
+.message-row.incoming {
+  align-self: flex-start;
+}
+
+.message-row.outgoing {
+  align-self: flex-end;
+  justify-content: flex-end;
+}
+
+/* Avatar kecil untuk pesan masuk */
+.avatar-small {
+  background-color: #dcd3c6;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Bubble Pesan */
+.bubble {
+  padding: 16px 18px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: white;
+  word-wrap: break-word;
+}
+
+/* Pesan Masuk (Kiri) */
+.incoming .bubble {
+  background-color: #38374a;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 0;
+}
+
+/* Pesan Keluar (Kanan) */
+.outgoing .bubble {
+  background-color: #6b4ce6;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 0;
+}
+
+/* Input Area (Bawah) */
+.chat-input-area {
+  padding: 15px 20px 25px 20px;
+  background-color: #fcfcfc;
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.chat-input-area form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.chat-input {
+  flex: 1;
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 999px;
+  padding: 16px 22px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  color: #333;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.chat-input::placeholder {
+  color: #a0a0a0;
+}
+
+.send-btn {
+  background-color: #6b4ce6;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(107, 76, 230, 0.3);
+  transition: transform 0.1s;
+}
+
+.send-btn:active {
+  transform: scale(0.95);
+}

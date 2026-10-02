@@ -1,0 +1,27 @@
+/* Bottom Navigation */
+.bottom-nav-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 18px 0;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+}
+
+.bottom-nav-icon {
+  font-size: 26px;
+  color: #b0b0b0;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.bottom-nav-icon-active {
+  color: #6b4ce6;
+}

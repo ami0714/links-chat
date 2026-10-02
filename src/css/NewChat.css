@@ -1,0 +1,150 @@
+/* NewChat.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fcfcfc;
+  font-family: 'Roboto Serif', serif;
+  color: #1a1a1a;
+}
+
+/* Container Utama */
+.nc-container {
+  min-height: 100vh;
+  background-color: #fcfcfc;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Section */
+.nc-header {
+  background-color: #6b4ce6;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding: 25px 20px;
+  display: flex;
+  align-items: center;
+  color: white;
+  z-index: 10;
+}
+
+.nc-back-btn {
+  background: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #6b4ce6;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Content Area */
+.nc-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* Kad Ungu Utama */
+.nc-card {
+  background-color: #6b4ce6;
+  border-radius: 30px;
+  padding: 40px 25px;
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 15px 35px rgba(107, 76, 230, 0.3);
+}
+
+.nc-title {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.nc-avatar {
+  width: 140px;
+  height: 140px;
+  background-color: #dcd3c6; /* Warna beige/kelabu muda sesuai gambar */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.nc-username {
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Input Area */
+.nc-input-wrapper {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  padding: 6px 6px 6px 20px;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.nc-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #333;
+}
+
+.nc-input::placeholder {
+  color: #a0a0a0;
+}
+
+.nc-send-btn {
+  background-color: #6b4ce6;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.1s;
+  /* Memberikan sedikit ruang putih di sekeliling butang seperti dalam gambar */
+  border: 2px solid #ffffff; 
+  outline: 1px solid #6b4ce6; /* Ring nipis ungu di luar putih */
+}
+
+.nc-send-btn:active {
+  transform: scale(0.95);
+}
