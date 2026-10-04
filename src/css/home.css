@@ -121,6 +121,17 @@ body {
   align-items: flex-start;
   gap: 15px;
   cursor: pointer;
+  border-radius: 16px;
+  transition: background 0.2s;
+  height: 10vh;
+  padding-top:5px ;
+}
+
+.chat-item:hover {
+  background: rgba(107, 76, 230, 0.25);
+}
+.chat-item:active {
+  background: rgba(78, 48, 194, 0.25);
 }
 
 .avatar {

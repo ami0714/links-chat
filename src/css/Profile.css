@@ -1,42 +1,37 @@
 /* Profile.css */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@400;500;600;700&display=swap');
 
-* {
+.profile-container,
+.profile-container * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-body {
-  background-color: #fcfcfc;
-  font-family: 'Roboto Serif', serif;
-  color: #1a1a1a;
-}
-
-/* Container Utama */
 .profile-container {
   min-height: 100vh;
   padding-bottom: 80px; /* Ruang untuk Bottom Nav */
   background-color: #fcfcfc;
   position: relative;
-  width: 430px;
-
+  width: 100%;
+  color: #1a1a1a;
+  font-family: 'Roboto Serif', serif;
 }
 
-/* Header Section */
 .profile-header {
   background-color: #6b4ce6;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-  padding: 30px 30px 30px 30px;
+  border-radius: 0 0 20px 20px;
+  padding: 20px 20px 24px;
+  width: 100vw;
   color: white;
   display: flex;
   flex-direction: column;
-  
-  
 }
 
 .header-top {
+  width: 100%;
+  max-width: 1120px;
+  margin-inline: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -72,9 +67,11 @@ body {
 }
 
 .header-text {
+  width: 100%;
+  max-width: 1120px;
+  margin: 16px auto 0;
   display: flex;
   flex-direction: column;
-  margin-top: 5px;
 }
 
 .header-subtitle {
@@ -95,7 +92,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
+  max-width: 720px;
+  margin: 24px auto 0;
+  padding: 0 20px;
   text-align: center;
 }
 
@@ -129,8 +128,10 @@ body {
 .stats-row {
   display: flex;
   gap: 15px;
+  width: 100%;
+  max-width: 720px;
   padding: 0 20px;
-  margin-top: 25px;
+  margin: 25px auto 0;
 }
 
 .stat-card {
@@ -179,6 +180,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  max-width: 720px;
+  margin-inline: auto;
   padding: 0 20px;
 }
 
@@ -237,7 +241,7 @@ body {
   z-index: 10;
 }
 
-.profile-nav-icon {
+/* .profile-nav-icon {
   font-size: 26px;
   color: #b0b0b0;
   cursor: pointer;
@@ -246,8 +250,48 @@ body {
 
 .profile-nav-icon-active {
   color: #6b4ce6;
+} */
+
+@media (max-width: 600px) {
+  .profile-header {
+    padding: 18px 20px 24px;
+  }
+
+  .header-text {
+    margin-top: 14px;
+  }
+
+  .profile-header-title {
+    font-size: 1.65rem;
+  }
 }
 
+@media (min-width: 768px) {
+  .profile-header {
+    border-radius: 0 0 30px 30px;
+    padding: 28px max(32px, calc((100vw - 1120px) / 2)) 34px;
+  }
+
+  .header-text {
+    margin-top: 20px;
+  }
+
+  .profile-header-title {
+    font-size: 2rem;
+  }
+
+  .profile-info {
+    margin-top: 32px;
+  }
+
+  .stats-row {
+    margin-top: 32px;
+  }
+
+  .qr-section {
+    margin-top: 36px;
+  }
+}
 
 .log-out-btn {
   bottom: 80px;
